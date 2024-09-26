@@ -1,5 +1,7 @@
 using Gestao.Data;
 using Gestao.Repository;
+using Gestao.Service.AuthService;
+using Gestao.Service.AuthService.SenhaService;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +12,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 );
 builder.Services.AddScoped<IAlunoRepository, AlunoRepository>();
 builder.Services.AddScoped<IProfessorRepository, ProfessorRepository>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ISenhaService, SenhaService>();
 
 
 builder.Services.AddControllers();
