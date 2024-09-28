@@ -23,12 +23,12 @@ namespace Gestao.Service.AuthService
         }
 
 
-        public async Task<Response<AlunoDtos>> Registrar(AlunoDtos alunoDtos)
+        public async Task<Response<AlunoDto>> Registrar(AlunoDto alunoDto)
         {
-            Response<AlunoDtos> respostaServico = new Response<AlunoDtos>();
+            Response<AlunoDto> respostaServico = new Response<AlunoDto>();
             try
             {
-                if(!VerificaSeEmaileUsuarioJaExiste(alunoDtos))
+                if(!VerificaSeEmaileUsuarioJaExiste(alunoDto))
                 {
                     respostaServico.Dados = null;
                     respostaServico.Status = false;
@@ -36,17 +36,17 @@ namespace Gestao.Service.AuthService
                     return respostaServico;
                 }
 
-                _iSenhaService.CriarSenhaHash(alunoDtos.Senha,out byte[] senhaHash, out byte[] senhaSalt);
+                _iSenhaService.CriarSenhaHash(alunoDto.Senha,out byte[] senhaHash, out byte[] senhaSalt);
 
                 Aluno usuario = new Aluno()
                 {
-                    Usuario = alunoDtos.Usuario,
-                    Nome = alunoDtos.Nome,
-                    Endereco = alunoDtos.Endereco,
+                    Usuario = alunoDto.Usuario,
+                    Nome = alunoDto.Nome,
+                    Endereco = alunoDto.Endereco,
                     Cargo = CargoEnum.Aluno,
-                    Numero = alunoDtos.Numero,
-                    DataNascimento = alunoDtos.DataNascimento,
-                    Email = alunoDtos.Email,
+                    Numero = alunoDto.Numero,
+                    DataNascimento = alunoDto.DataNascimento,
+                    Email = alunoDto.Email,
                     PasswordHash = senhaHash,
                     PasswordSalt = senhaSalt
                 };
@@ -100,9 +100,9 @@ namespace Gestao.Service.AuthService
             return respostaServico;
         }
 
-        public bool VerificaSeEmaileUsuarioJaExiste(AlunoDtos alunoDtos)
+        public bool VerificaSeEmaileUsuarioJaExiste(AlunoDto alunoDto)
         {
-            var usuario = _applicationDbContext.Alunos.FirstOrDefault(userBanco => userBanco.Email == alunoDtos.Email || userBanco.Usuario == alunoDtos.Usuario);
+            var usuario = _applicationDbContext.Alunos.FirstOrDefault(userBanco => userBanco.Email == alunoDto.Email || userBanco.Usuario == alunoDto.Usuario);
             
             if (usuario != null) return false;
 

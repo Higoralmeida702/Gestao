@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ps4H7ceBCmE=",
+  "dgSpecHash": "ldC/pJmPYEQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Higor\\Documents\\Gestao\\Gestao\\Gestao.csproj",
+  "projectFilePath": "C:\\Users\\Higor\\source\\repos\\Gestao\\Gestao.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Higor\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Higor\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

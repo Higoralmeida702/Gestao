@@ -7,7 +7,7 @@ using Gestao.Enum;
 
 namespace Gestao.Data.Dtos
 {
-    public class AlunoDtos
+    public class AlunoDto
     {
        [Required(ErrorMessage = "Digite um nome!")]
        public string Nome {get; set;}

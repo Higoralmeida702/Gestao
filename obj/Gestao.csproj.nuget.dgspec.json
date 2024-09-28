@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Higor\\Documents\\Gestao\\Gestao\\Gestao.csproj": {}
+    "C:\\Users\\Higor\\source\\repos\\Gestao\\Gestao.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Higor\\Documents\\Gestao\\Gestao\\Gestao.csproj": {
+    "C:\\Users\\Higor\\source\\repos\\Gestao\\Gestao.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Higor\\Documents\\Gestao\\Gestao\\Gestao.csproj",
+        "projectUniqueName": "C:\\Users\\Higor\\source\\repos\\Gestao\\Gestao.csproj",
         "projectName": "Gestao",
-        "projectPath": "C:\\Users\\Higor\\Documents\\Gestao\\Gestao\\Gestao.csproj",
+        "projectPath": "C:\\Users\\Higor\\source\\repos\\Gestao\\Gestao.csproj",
         "packagesPath": "C:\\Users\\Higor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Higor\\Documents\\Gestao\\Gestao\\obj\\",
+        "outputPath": "C:\\Users\\Higor\\source\\repos\\Gestao\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Higor\\AppData\\Roaming\\NuGet\\NuGet.Config",

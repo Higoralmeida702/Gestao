@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Gestao.Data.Dtos
 {
-    public class ProfessorDTOs
+    public class ProfessorDto
     {
         
     }

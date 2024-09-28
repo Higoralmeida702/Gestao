@@ -21,6 +21,9 @@ namespace Gestao.Model
         public string Numero {get; set;}
         [Required(ErrorMessage = "Necessario espeficicar que materia lesiona!")]
         public string MateriaResponsavel {get; set;}
+        
+        [Required(ErrorMessage = "Insira um nome de usuario valido!")] 
+        public string Usuario {get; set;}
         public CargoEnum Cargo {get; set;}
         public byte[] PasswordHash {get; set;}
         public byte[] PasswordSalt {get; set;}
