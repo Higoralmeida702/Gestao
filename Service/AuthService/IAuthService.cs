@@ -10,5 +10,6 @@ namespace Gestao.Service.AuthService
     public interface IAuthService 
     {
         Task<Response<AlunoDtos>> Registrar(AlunoDtos alunoDtos);
+        Task<Response<string>> Login(LoginDto loginDto);
     }
 }

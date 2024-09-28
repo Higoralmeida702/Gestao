@@ -135,3 +135,7 @@ C:\Users\Higor\Documents\Gestao\Gestao\obj\Debug\net8.0\refint\Gestao.dll
 C:\Users\Higor\Documents\Gestao\Gestao\obj\Debug\net8.0\Gestao.pdb
 C:\Users\Higor\Documents\Gestao\Gestao\obj\Debug\net8.0\Gestao.genruntimeconfig.cache
 C:\Users\Higor\Documents\Gestao\Gestao\obj\Debug\net8.0\ref\Gestao.dll
+C:\Users\Higor\Documents\Gestao\Gestao\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Higor\Documents\Gestao\Gestao\bin\Debug\net8.0\Scrutor.dll
+C:\Users\Higor\Documents\Gestao\Gestao\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\Higor\Documents\Gestao\Gestao\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll

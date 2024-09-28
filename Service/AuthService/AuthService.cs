@@ -7,6 +7,8 @@ using Gestao.Data.Dtos;
 using Gestao.Enum;
 using Gestao.Model;
 using Gestao.Service.AuthService.SenhaService;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.EntityFrameworkCore;
 
 namespace Gestao.Service.AuthService
 {
@@ -19,6 +21,7 @@ namespace Gestao.Service.AuthService
             _applicationDbContext = applicationDbContext;
             _iSenhaService = iSenhaService;
         }
+
 
         public async Task<Response<AlunoDtos>> Registrar(AlunoDtos alunoDtos)
         {
@@ -61,6 +64,42 @@ namespace Gestao.Service.AuthService
             return respostaServico;
         }
 
+        public async Task<Response<string>> Login(LoginDto loginDto)
+        {
+            Response<string> respostaServico = new Response<string>();
+
+            try
+            {
+                var usuario = await _applicationDbContext.Alunos.FirstOrDefaultAsync(userBanco => userBanco.Email == loginDto.Email);
+                if (usuario == null)
+                {
+                    respostaServico.Mensagem = "Crendencias inválidas!";
+                    respostaServico.Status = false;
+                    return respostaServico;
+                }
+
+                if(!_iSenhaService.VerificaSenhaHash(loginDto.Senha, usuario.PasswordHash, usuario.PasswordSalt))
+                {
+                    respostaServico.Mensagem = "Credenciais inválidas!";
+                    respostaServico.Status = false;
+                    return respostaServico;
+                }
+
+                var token = _iSenhaService.CriarToken(usuario);
+                respostaServico.Dados = token;
+                respostaServico.Mensagem = "Usuário logado com sucesso!";
+
+            }
+            catch (Exception error)
+            {
+                respostaServico.Dados = null;
+                respostaServico.Mensagem = error.Message;
+                respostaServico.Status = false;
+            }
+
+            return respostaServico;
+        }
+
         public bool VerificaSeEmaileUsuarioJaExiste(AlunoDtos alunoDtos)
         {
             var usuario = _applicationDbContext.Alunos.FirstOrDefault(userBanco => userBanco.Email == alunoDtos.Email || userBanco.Usuario == alunoDtos.Usuario);
@@ -69,5 +108,7 @@ namespace Gestao.Service.AuthService
 
             return true;
         }
+
+        
     }
 }

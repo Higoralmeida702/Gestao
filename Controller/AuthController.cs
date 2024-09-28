@@ -25,5 +25,13 @@ namespace Gestao.Controller
             var resposta = await _iAuthService.Registrar(alunoDto);
             return Ok(resposta);
         }
+
+        [HttpPost("Login/Aluno")]
+        public async Task<IActionResult> Login(LoginDto loginDto)
+        {
+            var resposta = await _iAuthService.Login(loginDto);
+            return Ok(resposta);
+        }
+       
     }
 }
