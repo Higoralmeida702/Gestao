@@ -83,6 +83,9 @@ namespace Gestao.Migrations
                     b.Property<int>("Cargo")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("DataNascimento")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -110,6 +113,10 @@ namespace Gestao.Migrations
                     b.Property<byte[]>("PasswordSalt")
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("Usuario")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
