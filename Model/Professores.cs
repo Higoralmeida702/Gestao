@@ -13,7 +13,7 @@ namespace Gestao.Model
         [Required(ErrorMessage = "Digite um nome!")]
         public string Nome {get; set;}
         [Required(ErrorMessage = "Digite um email valido!")]
-        [EmailAddress]
+        [EmailAddress(ErrorMessage = "Email inválido")]
         public string Email {get; set;}
         [Required(ErrorMessage = "Digite um endereço!")]
         public string Endereco {get; set;}
@@ -24,6 +24,10 @@ namespace Gestao.Model
         
         [Required(ErrorMessage = "Insira um nome de usuario valido!")] 
         public string Usuario {get; set;}
+
+        [Required(ErrorMessage = "Insira a data de aniversario")]
+        public DateTime DataNascimento { get; set; }
+
         public CargoEnum Cargo {get; set;}
         public byte[] PasswordHash {get; set;}
         public byte[] PasswordSalt {get; set;}

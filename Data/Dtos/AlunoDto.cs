@@ -15,6 +15,7 @@ namespace Gestao.Data.Dtos
        [Required(ErrorMessage = "Insira um nome de usuario valido!")] 
        public string Usuario {get; set;}
        [Required(ErrorMessage = "Digite um email valido!")]
+       [EmailAddress(ErrorMessage = "Endereço de email inválido.")]
        public string Email {get; set;}
        [Required(ErrorMessage = "Digite uma senha valida")]
        public string Senha {get; set;}
