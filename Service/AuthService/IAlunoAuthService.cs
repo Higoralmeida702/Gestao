@@ -7,7 +7,7 @@ using Gestao.Model;
 
 namespace Gestao.Service.AuthService
 {
-    public interface IAuthService 
+    public interface IAlunoAuthService 
     {
         Task<Response<AlunoDto>> Registrar(AlunoDto alunoDto);
         Task<Response<string>> Login(LoginDto loginDto);

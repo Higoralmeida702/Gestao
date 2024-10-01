@@ -12,11 +12,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Gestao.Service.AuthService
 {
-    public class AuthService : IAuthService
+    public class AlunoAuthService : IAlunoAuthService
     {
         private readonly ApplicationDbContext _applicationDbContext;
         private readonly ISenhaService _iSenhaService;
-        public AuthService(ApplicationDbContext applicationDbContext, ISenhaService iSenhaService)
+        public AlunoAuthService(ApplicationDbContext applicationDbContext, ISenhaService iSenhaService)
         {
             _applicationDbContext = applicationDbContext;
             _iSenhaService = iSenhaService;
