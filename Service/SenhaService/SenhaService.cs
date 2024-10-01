@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Gestao.Model;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.Configuration;
+using Gestao.Data.Dtos;
 
 namespace Gestao.Service.AuthService.SenhaService
 {
@@ -38,13 +39,29 @@ namespace Gestao.Service.AuthService.SenhaService
             }
         }
 
-        public string CriarToken(Aluno aluno)
+        public string CriarToken<T>(T usuario) where T : class
+        {
+            if (usuario is Aluno aluno)
+            {
+                return CriarTokenBase(aluno.Cargo.ToString(), aluno.Email, aluno.Usuario);
+            }
+            else if (usuario is Professores professor)
+            {
+                return CriarTokenBase(professor.Cargo.ToString(), professor.Email, professor.Usuario);
+            }
+            else
+            {
+                throw new ArgumentException("Tipo de usuário inválido");
+            }
+        }
+
+        private string CriarTokenBase(string cargo, string email, string username)
         {
             List<Claim> claims = new List<Claim>()
             {
-                new Claim("Cargo", aluno.Cargo.ToString()),
-                new Claim("Email", aluno.Email),
-                new Claim("Username", aluno.Usuario)
+                new Claim("Cargo", cargo),
+                new Claim("Email", email),
+                new Claim("Username", username)
             };
 
             var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value));
