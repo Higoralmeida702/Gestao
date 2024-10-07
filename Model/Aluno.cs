@@ -28,6 +28,10 @@ namespace Gestao.Model
         public DateTime DataNascimento {get; set;}
         public DateTime DataMatricula {get; set;} = DateTime.Now;
         public CargoEnum Cargo {get; set;}
+
+        public int RA {get; set;}
+        public List<NotaAluno> NotaAlunos {get; set;}
+
         public byte[] PasswordHash {get; set;}
         public byte[] PasswordSalt {get; set;}
     }

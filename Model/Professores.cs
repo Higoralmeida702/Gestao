@@ -27,8 +27,8 @@ namespace Gestao.Model
 
         [Required(ErrorMessage = "Insira a data de aniversario")]
         public DateTime DataNascimento { get; set; }
-
         public CargoEnum Cargo {get; set;}
+        public List<Materia> Materias {get; set;} = new List<Materia>();
         public byte[] PasswordHash {get; set;}
         public byte[] PasswordSalt {get; set;}
     }
