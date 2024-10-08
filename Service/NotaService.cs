@@ -59,7 +59,7 @@ namespace Gestao.Service
             }
         }
 
-    public async Task<List<NotaAlunoDto>> BuscarNotasPorRA(int ra)
+        public async Task <List<NotaAlunoDto>> BuscarNotasPorRA (int ra)
         {
             var aluno = await _applicationDbContext.Alunos.FirstOrDefaultAsync(a => a.RA == ra);
 
@@ -80,6 +80,61 @@ namespace Gestao.Service
                     Nota = n.Nota
                 })
                 .ToListAsync();
+        }
+        public async Task<string> EditarNota(int notaId, double novaNota)
+        {
+            var nota = await _applicationDbContext.NotaAlunos.FindAsync(notaId);
+
+            if (nota == null)
+            {
+                return "Nota não encontrada.";
+            }
+
+            if (novaNota < 0 || novaNota > 10)
+            {
+                return "A nota deve estar entre 0 e 10.";
+            }
+
+            nota.Nota = novaNota;
+
+            try
+            {
+                await _applicationDbContext.SaveChangesAsync();
+                return "Nota editada com sucesso.";
+            }
+            catch (Exception ex)
+            {
+                return $"Erro ao editar a nota: {ex.Message}";
+            }
+        }
+
+        public async Task<string> ExcluirNota(int notaId)
+        {
+            var nota = await _applicationDbContext.NotaAlunos.FindAsync(notaId);
+
+            if (nota == null)
+            {
+                return "Nota não encontrada.";
+            }
+
+            _applicationDbContext.NotaAlunos.Remove(nota);
+
+            try
+            {
+                await _applicationDbContext.SaveChangesAsync();
+                return "Nota excluída com sucesso.";
+            }
+            catch (Exception ex)
+            {
+                return $"Erro ao excluir a nota: {ex.Message}";
+            }
+        }
+
+        public async Task<int?> ObterRaPorUsuario (string usuario)
+        {
+            var aluno = await _applicationDbContext.Alunos
+                .FirstOrDefaultAsync(a => a.Usuario.ToLower() == usuario.ToLower());
+            return aluno?.RA;
         }
     }
 }
