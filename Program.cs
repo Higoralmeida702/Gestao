@@ -1,5 +1,6 @@
 using Gestao.Data;
 using Gestao.Repository;
+using Gestao.Service;
 using Gestao.Service.AuthService;
 using Gestao.Service.AuthService.SenhaService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -46,6 +47,7 @@ builder.Services.AddScoped<IProfessorRepository, ProfessorRepository>();
 builder.Services.AddScoped<IAlunoAuthService, AlunoAuthService>();
 builder.Services.AddScoped<IProfessorAuthService, ProfessorAuthService>();
 builder.Services.AddScoped<ISenhaService, SenhaService>();
+builder.Services.AddScoped<NotaService>();
 
 
 builder.Services.AddControllers();
