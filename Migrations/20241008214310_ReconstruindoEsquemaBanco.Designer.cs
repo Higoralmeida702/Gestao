@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Gestao.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241008191939_RemocaoMateriaReponsavelEAlunoNome")]
-    partial class RemocaoMateriaReponsavelEAlunoNome
+    [Migration("20241008214310_ReconstruindoEsquemaBanco")]
+    partial class ReconstruindoEsquemaBanco
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

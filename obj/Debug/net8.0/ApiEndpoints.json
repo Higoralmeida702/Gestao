@@ -1,0 +1,118 @@
+[
+  {
+    "ContainingType": "Gestao.Controller.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/Login/Aluno",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginDto",
+        "Type": "Gestao.Data.Dtos.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gestao.Controller.AuthController",
+    "Method": "LoginProfessor",
+    "RelativePath": "api/Auth/Login/Professor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ProfessorLoginDto",
+        "Type": "Gestao.Data.Dtos.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gestao.Controller.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/Auth/Registrar/Aluno",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "alunoDto",
+        "Type": "Gestao.Data.Dtos.AlunoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gestao.Controller.AuthController",
+    "Method": "RegistrarProfessor",
+    "RelativePath": "api/Auth/Registrar/Professor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "professorDto",
+        "Type": "Gestao.Data.Dtos.ProfessorDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gestao.Controllers.NotaController",
+    "Method": "AtribuirNota",
+    "RelativePath": "api/Nota/AtribuirNota",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "notaDto",
+        "Type": "Gestao.Data.Dtos.NotaAlunoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gestao.Controllers.NotaController",
+    "Method": "BuscarNotasPorRA",
+    "RelativePath": "api/Nota/BuscarNotasPorRa/{ra}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ra",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gestao.Controller.UsuarioController",
+    "Method": "GetUsuario",
+    "RelativePath": "api/Usuario",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Gestao.Model.Response\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
