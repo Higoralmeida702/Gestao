@@ -33,6 +33,10 @@ namespace Gestao.Service.AuthService
 
             _iSenhaService.CriarSenhaHash(professorDto.Senha,out byte[] senhaHash, out byte[] senhaSalt);
 
+            var materias = await _applicationDbContext.Materias
+                .Where(m => professorDto.MateriasId.Contains(m.Id))
+                .ToListAsync();
+
             Professores usuario = new Professores()
             {
                 Usuario = professorDto.Usuario,
@@ -42,14 +46,18 @@ namespace Gestao.Service.AuthService
                 Numero = professorDto.Numero,
                 DataNascimento = professorDto.DataNascimento,
                 Email = professorDto.Email,
-                MateriaResponsavel = professorDto.MateriaResponsavel,
+                Materias = materias,
                 PasswordHash = senhaHash,
                 PasswordSalt = senhaSalt
             };   
             
-            _applicationDbContext.Add(usuario);
+            _applicationDbContext.Professores.Add(usuario);
             await _applicationDbContext.SaveChangesAsync();
+
+
             respostaServico.Mensagem = "Professor criado com sucesso";
+            respostaServico.Status = true;
+            respostaServico.Dados = professorDto;
 
             }
             catch (Exception error)
