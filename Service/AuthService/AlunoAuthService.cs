@@ -47,6 +47,7 @@ namespace Gestao.Service.AuthService
                     Numero = alunoDto.Numero,
                     DataNascimento = alunoDto.DataNascimento,
                     Email = alunoDto.Email,
+                    RA = GerarNumeroAleatorio(),
                     PasswordHash = senhaHash,
                     PasswordSalt = senhaSalt
                 };
@@ -109,6 +110,11 @@ namespace Gestao.Service.AuthService
             return true;
         }
 
-        
+        private int GerarNumeroAleatorio()
+        {
+            Random random = new Random();
+            return random.Next(1000000000, 2000000000);
+        }
+
     }
 }
