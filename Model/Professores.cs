@@ -19,9 +19,6 @@ namespace Gestao.Model
         public string Endereco {get; set;}
         [Required(ErrorMessage = "Digite o numero de telefone valido!")]
         public string Numero {get; set;}
-        [Required(ErrorMessage = "Necessario espeficicar que materia lesiona!")]
-        public string MateriaResponsavel {get; set;}
-        
         [Required(ErrorMessage = "Insira um nome de usuario valido!")] 
         public string Usuario {get; set;}
 

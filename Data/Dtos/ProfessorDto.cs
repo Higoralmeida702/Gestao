@@ -1,4 +1,5 @@
 using Gestao.Enum;
+using Gestao.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -26,11 +27,11 @@ namespace Gestao.Data.Dtos
         public string Numero { get; set; }
         [Required(ErrorMessage = "Digite um endere�o valido!")]
         public string Endereco { get; set; }
-
-        [Required(ErrorMessage = "Coloque uma desciplina valida valida")]
-        public string MateriaResponsavel { get; set; }
+     
         [Required(ErrorMessage = "Coloque uma data valida")]
         public DateTime DataNascimento { get; set; }
         public CargoEnum Cargo { get; set; }
+
+        public List<int> MateriasId {get; set;} = new List<int>();
     }
 }

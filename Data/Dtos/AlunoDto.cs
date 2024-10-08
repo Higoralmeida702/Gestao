@@ -28,6 +28,7 @@ namespace Gestao.Data.Dtos
        public string Endereco {get; set;}
        [Required(ErrorMessage = "Coloque uma data valida")]
        public DateTime DataNascimento {get; set;}
+       public int RA {get; set;}
        public CargoEnum Cargo {get; set;}
     }
 }
