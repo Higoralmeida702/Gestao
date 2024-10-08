@@ -61,7 +61,8 @@ namespace Gestao.Service.AuthService.SenhaService
             {
                 new Claim("Cargo", cargo),
                 new Claim("Email", email),
-                new Claim("Username", username)
+                new Claim("Username", username),
+                new Claim(ClaimTypes.Role, cargo)
             };
 
             var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value));
