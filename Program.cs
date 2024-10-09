@@ -42,8 +42,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 });
 
 
-builder.Services.AddScoped<IAlunoRepository, AlunoRepository>();
-builder.Services.AddScoped<IProfessorRepository, ProfessorRepository>();
 builder.Services.AddScoped<IAlunoAuthService, AlunoAuthService>();
 builder.Services.AddScoped<IProfessorAuthService, ProfessorAuthService>();
 builder.Services.AddScoped<ISenhaService, SenhaService>();
