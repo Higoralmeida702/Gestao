@@ -47,7 +47,7 @@ dotnet run
 ## 6. Acesse a documentação da API no Swagger
 
 ## 7. Autenticação no Swagger:
--Crie uma conta de professor.
--Faça login com as credenciais.
--No Swagger, vá até o botão "Authorize" e insira:
+Crie uma conta de professor.
+Faça login com as credenciais.
+No Swagger, vá até o botão "Authorize" e insira:
 Token que voce recebeu ao realizar o login, para poder acessar os endpoints disponíveis para o professor.
